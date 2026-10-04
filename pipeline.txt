@@ -1,0 +1,52 @@
+Ask number of classes
+        |
+        ↓
+Ask image format (jpg / png / webp / ...)
+        |
+        ↓
+Ask image type (Grayscale / BGR)
+        |
+        ↓
+Ask name for each class
+        |
+        ↓
+Create a directory for each class
+        |
+        ↓
+Press Z
+        |
+        ↓
+Photoshoot for the current class starts
+        |
+        ↓
+Capture 20 frames
+        |
+        ↓
+Generate a random filename for each image
+        |
+        ↓
+Save each image in the directory of its specific class
+        |
+        ↓
+20 frames completed
+        |
+        ↓
+Press Z again?
+      /       \
+    YES        NO
+     |          |
+     ↓          ↓
+Capture       Wait
+another
+20 frames
+
+        |
+        ↓
+Press Q when finished
+        |
+        ↓
+Ask whether the user wants to continue
+        |
+        ↓
+YES → Move to the next class
+NO  → End the program
