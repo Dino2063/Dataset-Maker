@@ -1,39 +1,125 @@
-# Dataset Maker
+# 📸 Webcam Dataset Maker
 
-I made this project while learning OpenCV because I got tired of manually creating folders and saving webcam images whenever I wanted to train an image classification model.
+A simple Python program for creating custom image datasets using a webcam.
 
-This script lets you create datasets for multiple classes using your webcam. It automatically creates folders, crops the selected region, and saves the images after a short countdown.
+The program allows you to create multiple classes, choose an image format and image type, and capture images directly into separate directories for each class.
 
-## Features
+## ✨ Features
 
-- Supports multiple classes
-- Saves grayscale or color images
-- Countdown before capture
-- Random filenames
-- Live image counter
-- ROI cropping
+* 📷 Capture images using a webcam
+* 🗂️ Create datasets with multiple classes
+* 📁 Automatically create directories for each class
+* 🎨 Save images in:
 
-## How to run
+  * Grayscale
+  * BGR
+* 🖼️ Support multiple image formats:
 
-Install OpenCV:
+  * JPG
+  * JPEG
+  * PNG
+  * WEBP
+* 🔢 Capture 20 frames per capture
+* 🔤 Generate random filenames for captured images
+* 🟩 Display a capture region on the webcam feed
+* 📊 Display the number of images captured
+* 🔄 Capture multiple batches for each class
+
+## 🛠️ Requirements
+
+Make sure Python is installed, then install OpenCV:
 
 ```bash
 pip install opencv-python
 ```
 
-Run:
+The following modules are part of Python's standard library and require no additional installation:
+
+* `pathlib`
+* `time`
+* `random`
+* `string`
+
+## 🚀 Usage
+
+Run the Python script:
 
 ```bash
 python dataset_maker.py
 ```
 
-Follow the prompts in the terminal.
+The program will ask you for:
 
-### Controls
+* Number of classes
+* Image format
+* Image type (Grayscale or BGR)
+* Name of each class
 
-- **Z** → Start the countdown and capture an image
-- **Q** → Finish capturing images for the current class
+A directory named `Webcam_recog` will automatically be created to store the dataset.
 
-## Why I made this
+## 🎮 Controls
 
-I built this to speed up creating datasets for my computer vision projects, especially hand gesture recognition. Instead of manually taking pictures and organizing them into folders, the program does it automatically by storing the pics taking through webcam in a seperate sub directory .
+| Key | Action                       |
+| --- | ---------------------------- |
+| `Z` | Capture a batch of 20 frames |
+| `Q` | Finish the current class     |
+
+Make sure the webcam window is focused before using the keyboard controls.
+
+## 📂 Dataset Structure
+
+The generated dataset will look similar to:
+
+```text
+Webcam_recog/
+│
+├── class1/
+│   ├── abcde.jpg
+│   ├── fghij.jpg
+│   └── ...
+│
+├── class2/
+│   ├── klmno.jpg
+│   ├── pqrst.jpg
+│   └── ...
+│
+└── class3/
+    ├── uvwxy.jpg
+    └── ...
+```
+
+Each class has its own directory, making the dataset easy to use for machine learning and computer vision projects.
+
+## 🖼️ Capture Region
+
+The program captures only the area inside the rectangle displayed on the webcam feed.
+
+The current capture coordinates are:
+
+```python
+p1 = (170, 90)
+p2 = (470, 390)
+```
+
+With a webcam resolution of `640 × 480`, this creates a `300 × 300` pixel capture region.
+
+## 🧠 Use Cases
+
+This project can be useful for creating custom datasets for:
+
+* Image classification
+* Computer vision experiments
+* Machine learning projects
+* Gesture recognition
+* Object recognition
+* Custom image-based models
+
+## 🧰 Built With
+
+* **Python**
+* **OpenCV**
+* **Pathlib**
+
+---
+
+A lightweight tool for quickly creating organized webcam datasets for computer vision projects. 📸
